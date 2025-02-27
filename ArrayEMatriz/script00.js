@@ -24,6 +24,15 @@ console.log(palavras);
 palavras.pop(); //remove o último elemento
 console.log(palavras);
 
+// Alterar o valor de um elemento
+palavras[2]="Sacola";
+console.log(palavras);
+
+// Percorrer um Array (loop) - for
+for(let i = 0; i<numeros.length;i++){
+    console.log("numero["+i+"]="+numeros[1])
+}
+
 palavras.shift(); //remove o primeiro elemento
 console.log(palavras);
 
