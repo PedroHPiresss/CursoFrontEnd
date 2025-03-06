@@ -1,17 +1,28 @@
-let titulo = document.querySelector(".titulo");
+// 1.1 - Selecionar um elemento
+let titulo = document.querySelector("#titulo"); // select by id
 console.log(titulo);
-let paragrafo = document.querySelector(".paragrafo")
+
+let paragrafo = document.querySelector(".paragrafo"); // select by class
 console.log(paragrafo);
-let button = document.querySelector("button")
+
+let button = document.querySelector("button"); // select by tag
 console.log(button);
 
-// alterar texto
+// 1.2 - Alterar texto
 function alterarTexto(){
-    document.getElementsByClassName("titulo").innerText = "Texto Alterado!";
-    document.getElementsByClassName("descricao").innerText = "Textinho Alterado Também!";
+    titulo.innerText = "Texto Alterado!";
+    paragrafo.innerText = "Textinho Alterado Também!";
 }
 
-function alterarCor(){
-    let fundo = document.querySelector("body")
-    fundo.style.backgroundColor = "blue";
+// 1.3 - Alterar cor de fundo
+function alterarCorFundo(){
+    let body = document.querySelector("body")
+    body.style.backgroundColor = "blue"
+}
+
+// 1.4 - adicionar class
+function adicionarClasse(){
+    titulo.classList.add("descricao");
+    let descricao = document.querySelector(".descricao");
+    descricao.style.color = "red";
 }
