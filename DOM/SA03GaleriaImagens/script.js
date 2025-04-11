@@ -55,25 +55,25 @@ function atualizarGaleria(){
 
 //atualizar Carrossel
 function atualizarCarrossel(){
-    carrossel.innerHTML = "";
+    carrossel.innerHTML = ""; // Limpa o carrossel antes de atualizar
     imagens.forEach(imagem =>{
         let img = document.createElement("img");
         img.src = imagem;
+        img.style.width = "100%";
         carrossel.appendChild(img);
     });
 
+    carrossel.style.width = `${imagens.length * 100}%`; // Ajusta a largura do carrossel dinamicamente
     iniciarCarrossel();
 }
 
 //iniciar Carrossel
 
 function iniciarCarrossel(){
-    if(imagens.length > 0){
         let index = 0;
 
         setInterval(() =>{
-            index = (index+1)%imagens.length;
+            index = (index + 1) % imagens.length;
             carrossel.style.transform = `translateX('+(index *100)+'}%)`;
         }, 2000);
     }
-}
