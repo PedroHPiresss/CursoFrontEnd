@@ -46,7 +46,7 @@ export class Vaga {
   }
 
   //fromMap API para Obj
-  fromMap(map:any):Vaga{
+  static fromMap(map:any):Vaga{
     return new Vaga(
       map.id,
       map.nome,

@@ -8,7 +8,7 @@ import { Vaga } from '../models/vaga.model';
 })
 export class VagasService {
   //atributo
-  private apiUrl = "http://localhost:3013/vagas"; //Caminho da API
+  private apiUrl = "http://localhost:3014/vagas"; //Caminho da API
 
   constructor(private http: HttpClient) { }
 

@@ -8,12 +8,12 @@ import { VagasService } from 'src/app/services/vagas.service';
   styleUrls: ['./painel-vagas.component.scss']
 })
 export class PainelVagasComponent implements OnInit{
-  public vaga:Vaga = new Vaga(0, "", "", "", 0); // rastrear os dados no fortmulário por interpolação
+  public vaga:Vaga = new Vaga(0, '', '', '', 0); // rastrear os dados no fortmulário por interpolação
 
   public vagas: Vaga[] = [];
   //armazenar os dados da API - json
 
-  constructor(private _vagaService: VagasService){} // Aplicando o service no Construtor
+  constructor(private _vagasService: VagasService){} // Aplicando o service no Construtor
 
   ngOnInit(): void {
     this.listarVagas();
@@ -36,10 +36,41 @@ export class PainelVagasComponent implements OnInit{
   }
 
   //Listar unica vaga
+  listarVagaUnica(vaga:Vaga){
+    //Função para listar vaga única, para edição no formulário
+    this.vaga = vaga;
+    //A vaga clicada é mostrada no formulário =>
+  }
 
   //Cadastrar Vaga
+  cadastrar(){
+    this._vagasService.cadastrarVaga(this.vaga).subscribe(
+      ()=>{
+        this.vaga = new Vaga(0,"","","",0); //limpar os campos do formulário 
+        this.listarVagas();
+        alert("Vaga cadastrada com suceeso!");
+      }, (err) => { console.error("Exception: ",err);}
+    );
+  }
 
   //Atualizar Vaga
+  atualizar(id:any){
+    this._vagasService.atualizarVaga(id, this.vaga).subscribe(
+      ()=>{
+        this.vaga = new Vaga(0,"","","",0);
+        this.listarVagas();
+        alert("Vaga atualizada com sucesso!");
+      }, (err) => {console.error("Exception: ",err);}
+    );
+  }
 
-  //Remover Vaga
+  //Deletar Vaga
+  excluir(id:any){
+    this._vagasService.removerVaga(id).subscribe(
+      ()=>{
+        this.listarVagas();
+        alert("Vaga deletada com sucesso!");
+      }, (err) => {console.error("Exception: ",err);}
+    );
+  }
 }
