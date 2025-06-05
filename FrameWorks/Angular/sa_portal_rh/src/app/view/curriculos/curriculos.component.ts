@@ -22,7 +22,7 @@ export class CurriculosComponent implements OnInit{
         this.curriculos = retornaCurriculo.map(
           (item) => {
             return new Curriculo(
-              item.cpf,
+              item.id,
               item.nome,
               item.idade,
               item.formacao,

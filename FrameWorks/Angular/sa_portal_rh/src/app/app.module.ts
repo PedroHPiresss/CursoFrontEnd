@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PainelVagasComponent } from './view/painel-vagas/painel-vagas.component';
 import { FormsModule } from '@angular/forms';
 import { PainelCurriculosComponent } from './view/painel-curriculos/painel-curriculos.component';
+import { ListaCurriculoComponent } from './view/lista-curriculo/lista-curriculo.component'
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { PainelCurriculosComponent } from './view/painel-curriculos/painel-curri
     CurriculosComponent,
     VagasComponent,
     PainelVagasComponent,
-    PainelCurriculosComponent
+    PainelCurriculosComponent,
+    ListaCurriculoComponent
   ],
   imports: [
     BrowserModule,

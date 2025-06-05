@@ -1,0 +1,31 @@
+<h2>Tabela de Curriculos</h2>
+
+<!-- tabela com as vagas já cadastradas -->
+<section class="lista-curriculo">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Idade</th>
+        <th>Formação</th>
+        <th>Descrição</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr class="curriculo-row" *ngFor="let curriculo of curriculos">
+            <td>{{curriculo.id}}</td>
+            <td>{{curriculo.nome}}</td>
+            <td>{{curriculo.idade}}</td>
+            <td>{{curriculo.formacao}}</td>
+            <td>{{curriculo.descricao}}</td>
+            <td>
+              <!-- <button type="button" (click)="irParaEditar(curriculo.id)">Atualizar Curriculo</button> -->
+              <button type="button" (click)="excluirCurriculo(curriculo.id)">Excluir Curriculo</button>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+</section>
+
+<div class="rodape"></div>

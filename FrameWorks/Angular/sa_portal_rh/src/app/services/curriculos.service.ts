@@ -23,14 +23,14 @@ export class CurriculosService {
   }
 
   //put
-  atualizarCurriculo(cpf: any, curriculo:Curriculo): Observable<Curriculo[]> {
-    const urlAtualizado = `${this.apiUrl}/${cpf}`;
+  atualizarCurriculo(id: any, curriculo:Curriculo): Observable<Curriculo[]> {
+    const urlAtualizado = `${this.apiUrl}/${id}`;
     return this.http.put<Curriculo[]>(urlAtualizado, curriculo);
   }
 
   //delete
-  removerCurriculo(cpf: any): Observable<Curriculo[]>{
-    const urlDeletar = `${this.apiUrl}/${cpf}`;
+  removerCurriculo(id: any): Observable<Curriculo[]>{
+    const urlDeletar = `${this.apiUrl}/${id}`;
     return this.http.delete<Curriculo[]>(urlDeletar);
   }
 

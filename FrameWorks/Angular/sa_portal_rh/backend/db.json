@@ -19,7 +19,7 @@
       "nome": "Desenvolver Fullstack Senior",
       "foto": "foto3.jpg",
       "descricao": "Trabalhar com Desenvolvimento Web",
-      "salario": 10000
+      "salario": "100"
     },
     {
       "id": "4",
@@ -27,13 +27,15 @@
       "foto": "foto4.jpg",
       "descricao": "Trabalhar com nuvem AWS",
       "salario": 8000
-    },
+    }
+  ],
+  "curriculos": [
     {
       "id": "7",
-      "nome": "yyyyyyyyyyyyyyyyyyyy",
-      "foto": "",
-      "descricao": "jjjjjjjjjjjjjjjjjjjjjj",
-      "salario": "4444"
+      "nome": "Maria Henrica",
+      "idade": "28",
+      "formacao": "Ciência da Computação",
+      "descricao": "Desenvolvedor FrontEnd com experiência em Angular."
     }
   ]
 }

@@ -3,21 +3,21 @@ import { Curriculo } from 'src/app/models/curriculo.model';
 import { CurriculosService } from 'src/app/services/curriculos.service';
 
 @Component({
-  selector: 'app-painel-curriculos',
-  templateUrl: './painel-curriculos.component.html',
-  styleUrls: ['./painel-curriculos.component.scss']
+  selector: 'app-lista-curriculo',
+  templateUrl: './lista-curriculo.component.html',
+  styleUrls: ['./lista-curriculo.component.scss']
 })
-export class PainelCurriculosComponent implements OnInit{
-  public curriculo: Curriculo = new Curriculo(0,  '', '', '', '');
+export class ListaCurriculoComponent {
+  public curriculo: Curriculo = new Curriculo(0,'', '', '', '');
 
   public curriculos: Curriculo[] = [];
+  router: any;
 
   constructor(private _curriculosService: CurriculosService){}
 
   ngOnInit(): void {
     this.listarCurriculos();
   }
-
 
   listarCurriculos() {
     this._curriculosService.getCurriculos().subscribe((retornaCurriculo) => {
