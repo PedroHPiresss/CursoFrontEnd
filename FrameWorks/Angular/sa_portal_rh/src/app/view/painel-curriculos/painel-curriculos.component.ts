@@ -38,14 +38,26 @@ export class PainelCurriculosComponent implements OnInit{
   }
 
   cadastrarCurriculo(){
-    this._curriculosService.cadastrarCurriculo(this.curriculo).subscribe(
-      () => {
-        this.curriculo = new Curriculo(0,"","","","");
-        this.listarCurriculos();
-        alert("Curriculo cadastardo com sucesso!");
-      }, (err) => { console.error("Exception: ",err);}
-    );
+  // Verificação dos campos obrigatórios
+  if (
+    !this.curriculo.id ||
+    !this.curriculo.nome ||
+    !this.curriculo.idade ||
+    !this.curriculo.formacao ||
+    !this.curriculo.descricao
+  ) {
+    alert("Preencha todos os campos antes de cadastrar!");
+    return;
   }
+
+  this._curriculosService.cadastrarCurriculo(this.curriculo).subscribe(
+    () => {
+      this.curriculo = new Curriculo(0,"","","","");
+      this.listarCurriculos();
+      alert("Curriculo cadastrado com sucesso!");
+    }, (err) => { console.error("Exception: ",err);}
+  );
+}
 
   atualizarCurriculo(id:any){
     this._curriculosService.atualizarCurriculo(id, this.curriculo).subscribe(

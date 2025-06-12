@@ -1,0 +1,16 @@
+<h2>Editar Currículo</h2>
+<form *ngIf="curriculo" (ngSubmit)="atualizarCurriculo()">
+  <label>Nome:</label>
+  <input type="text" [(ngModel)]="curriculo.nome" name="nome" required />
+
+  <label>Idade:</label>
+  <input type="text" [(ngModel)]="curriculo.idade" name="idade" required />
+
+  <label>Formação:</label>
+  <input type="text" [(ngModel)]="curriculo.formacao" name="formacao" required />
+
+  <label>Descrição:</label>
+  <input type="text" [(ngModel)]="curriculo.descricao" name="descricao" required />
+
+  <button type="submit">Salvar Alterações</button>
+</form>

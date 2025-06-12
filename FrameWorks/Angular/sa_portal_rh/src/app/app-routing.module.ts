@@ -5,7 +5,9 @@ import { CurriculosComponent } from './view/curriculos/curriculos.component';
 import { VagasComponent } from './view/vagas/vagas.component';
 import { PainelVagasComponent } from './view/painel-vagas/painel-vagas.component';
 import { PainelCurriculosComponent } from './view/painel-curriculos/painel-curriculos.component';
-import { ListaCurriculoComponent } from './view/lista-curriculo/lista-curriculo.component'
+import { ListaCurriculoComponent } from './view/lista-curriculo/lista-curriculo.component';
+import { EditarCurriculoComponent } from './view/editar-curriculo/editar-curriculo.component';
+import { VerCurriculoComponent } from './view/ver-curriculo/ver-curriculo.component';
 
 const routes: Routes = [
   {path: "",component: InicioComponent},
@@ -13,7 +15,9 @@ const routes: Routes = [
   {path: "vagas", component: VagasComponent},
   {path: "vaga-listar", component: PainelVagasComponent},
   {path: "curriculo-listar", component: PainelCurriculosComponent},
-  {path: "lista-curriculo", component: ListaCurriculoComponent}
+  {path: "lista-curriculo", component: ListaCurriculoComponent},
+  {path: 'editar-curriculo/:id', component: EditarCurriculoComponent },
+  {path: 'ver-curriculo/:id', component: VerCurriculoComponent }
 ];
 
 @NgModule({

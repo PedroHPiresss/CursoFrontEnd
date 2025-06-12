@@ -13,17 +13,21 @@
       </tr>
     </thead>
     <tbody>
-        <tr class="curriculo-row" *ngFor="let curriculo of curriculos">
-            <td>{{curriculo.id}}</td>
-            <td>{{curriculo.nome}}</td>
-            <td>{{curriculo.idade}}</td>
-            <td>{{curriculo.formacao}}</td>
-            <td>{{curriculo.descricao}}</td>
-            <td>
-              <!-- <button type="button" (click)="irParaEditar(curriculo.id)">Atualizar Curriculo</button> -->
-              <button type="button" (click)="excluirCurriculo(curriculo.id)">Excluir Curriculo</button>
-            </td>
-        </tr>
+      <tr class="curriculo-row" *ngFor="let curriculo of curriculos">
+        <td>{{ curriculo.id }}</td>
+        <td>{{ curriculo.nome }}</td>
+        <td>{{ curriculo.idade }}</td>
+        <td>{{ curriculo.formacao }}</td>
+        <td>{{ curriculo.descricao }}</td>
+        <td>
+          <a [routerLink]="['/editar-curriculo', curriculo.id]">
+            <button type="button">Atualizar Curriculo</button>
+          </a>
+          <button type="button" (click)="excluirCurriculo(curriculo.id)">
+            Excluir Curriculo
+          </button>
+        </td>
+      </tr>
     </tbody>
   </table>
 </section>

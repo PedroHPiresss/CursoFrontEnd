@@ -31,9 +31,23 @@
   ],
   "curriculos": [
     {
-      "id": "7",
-      "nome": "Maria Henrica",
-      "idade": "28",
+      "id": "1",
+      "nome": "Carlão",
+      "idade": "77",
+      "formacao": "Ciência da Computação",
+      "descricao": "Especialista em BackEnd e bancos de dados relacionais."
+    },
+    {
+      "id": "8",
+      "nome": "jqsqojujuj",
+      "idade": "77",
+      "formacao": "AAAAAAAAAAAAAAA",
+      "descricao": "Desenvolvedor FrontEnd com experiência em Angular."
+    },
+    {
+      "id": "44",
+      "nome": "Janta",
+      "idade": "78",
       "formacao": "Ciência da Computação",
       "descricao": "Desenvolvedor FrontEnd com experiência em Angular."
     }

@@ -13,7 +13,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { PainelVagasComponent } from './view/painel-vagas/painel-vagas.component';
 import { FormsModule } from '@angular/forms';
 import { PainelCurriculosComponent } from './view/painel-curriculos/painel-curriculos.component';
-import { ListaCurriculoComponent } from './view/lista-curriculo/lista-curriculo.component'
+import { ListaCurriculoComponent } from './view/lista-curriculo/lista-curriculo.component';
+import { EditarCurriculoComponent } from './view/editar-curriculo/editar-curriculo.component';
+import { VerCurriculoComponent } from './view/ver-curriculo/ver-curriculo.component'
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { ListaCurriculoComponent } from './view/lista-curriculo/lista-curriculo.
     VagasComponent,
     PainelVagasComponent,
     PainelCurriculosComponent,
-    ListaCurriculoComponent
+    ListaCurriculoComponent,
+    EditarCurriculoComponent,
+    VerCurriculoComponent
   ],
   imports: [
     BrowserModule,

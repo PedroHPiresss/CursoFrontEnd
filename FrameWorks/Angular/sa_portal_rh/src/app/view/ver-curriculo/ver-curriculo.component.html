@@ -1,0 +1,12 @@
+<div *ngIf="curriculo; else naoEncontrado" class="card">
+  <div class="card-body">
+    <h2>Currículo de {{curriculo.nome}}</h2>
+    <p><strong>ID:</strong> {{curriculo.id}}</p>
+    <p><strong>Idade:</strong> {{curriculo.idade}}</p>
+    <p><strong>Formação:</strong> {{curriculo.formacao}}</p>
+    <p><strong>Descrição:</strong> {{curriculo.descricao}}</p>
+  </div>
+</div>
+<ng-template #naoEncontrado>
+  <p>Currículo não encontrado.</p>
+</ng-template>

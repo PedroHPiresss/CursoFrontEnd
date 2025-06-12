@@ -1,13 +1,14 @@
 <section class="lista-curriculos">
     <button class="btn-listar" routerLink="/curriculo-listar">Cadastrar Curriculo</button>
+    <button class="btn-listar" routerLink="/lista-curriculo">Lista de Curriculos</button>
     <div *ngFor="let curriculo of curriculos">
         <div class="card">
-            <!-- <img src="assets\img\curriculos\{{curriculo.foto}}" alt="..."> -->
             <div class="card-body">
                 <h5 class="card-title">ID do Candidato: {{curriculo.id}}</h5>
                 <h5 class="card-title">Nome do Candidato: {{curriculo.nome}}</h5>
                 <p class="card-text">Idade do Candidato: {{curriculo.idade}}</p>
                 <p class="card-text">Formação: {{curriculo.formacao}}</p>
+                <button class="btn-ver" [routerLink]="['/ver-curriculo', curriculo.id]">Ver Currículo</button>
             </div>
         </div>
         
