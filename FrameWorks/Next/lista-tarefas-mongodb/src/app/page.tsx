@@ -36,7 +36,7 @@ export default function Home(){
     try {
       const resultado = await fetch("/api/tarefas",{
         method: "POST",
-        headers: {"Content-type":"applicatin/json"},
+        headers: {"Content-type":"application/json"},
         body: JSON.stringify({titulo:newTarefa})
       });
       const data = await resultado.json();
@@ -51,17 +51,34 @@ export default function Home(){
   }
 
   //updateTarefa
-  const updateTarefa = async() =>{}
+  const updateTarefa = async(id: string, statusTarefa: boolean) =>{
+    try {
+      const resposta = await fetch(`/api/tarefas/${id}`,
+        {
+          method: "PATCH",
+          headers: {"Content-type":"application/json"},
+          body: JSON.stringify({concluida: !statusTarefa})
+        }
+      );
+      const data = await resposta.json();
+      if(data.success){
+        fetchTarefas();// server-side
+        // setTarefas(tarefas.map((tarefa)=>(tarefa._id ===id ? data.data : tarefa))) // client-side
+      }
+    } catch (error) {
+      console.error(error)
+    }
+  }
 
   //deleteTarefa
   const deleteTarefa = async(id: string) =>{
   try {
-    const resultado = await fetch(`/api/tarefas/${id}`, {
+    const resultado = await fetch(`/api/tarefas/${id}`,{
       method: "DELETE",
     });
-    const data = await resultado.json();
-    if(data.success){
-      setTarefas(tarefas.filter(tarefa => tarefa._id !== id));
+    if(resultado){
+      //fetchTarefas(); //server-side
+      setTarefas(tarefas.filter((tarefa)=> tarefa._id !==id)) //remove a tarefa do vetor
     }
   } catch (error) {
     console.error(error);
