@@ -26,10 +26,10 @@ export async function POST(req: Request){
         const token = jwt.sign(
             {id: usuario._id, username: usuario.username, tipo: usuario.tipo},
             JWT_SECRET as string,
-            { expiresIn: "8h"}
+            { expiresIn: "1h"}
         );
         //retornsr o token
-        return NextResponse.json({success:true, token});
+        return NextResponse.json({success:true, token, usuario: {id: usuario.id, username: usuario.username, tipo: usuario.tipo}});
     } catch (error) {
         return NextResponse.json({success:false, error: error });
     }
