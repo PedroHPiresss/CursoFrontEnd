@@ -107,10 +107,37 @@ flowchart TD
 
  
 ## Análise de Risco
+1. Riscos Técnicos
 
+Falhas de segurança e acesso indevido.
+
+Lentidão do sistema com muitos dados.
+
+Perda de informações por falta de backup.
+
+2. Riscos Operacionais
+
+Usuários podem resistir ao uso do sistema.
+
+Conexão de internet ruim prejudicando acesso.
+
+Dados cadastrados de forma incorreta.
+
+3. Riscos de Projeto
+
+Atrasos no desenvolvimento.
+
+Custos maiores que o previsto.
+
+Falta de clareza no escopo do sistema.
+
+4. Riscos Humanos
+
+Erros na atualização de ordens de serviço.
+
+Falta de treinamento dos técnicos e gestores.
 
 ## Prototipagem
+https://www.figma.com/design/Hl3GwuO11n4rdy8doP9b9c/Untitled?node-id=0-1&t=wMw0oHdmHKUMqVvg-1
 
-
-## Codificação
 
