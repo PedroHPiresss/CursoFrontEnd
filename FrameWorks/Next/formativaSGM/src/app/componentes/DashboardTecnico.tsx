@@ -2,6 +2,7 @@
 
 import { IOrdemServico } from "@/models/ordemServico";
 import { useEffect, useState } from "react";
+import styles from "./DashboardTecnico.module.css";
 
 export default function DashboardTecnico(){
     // aramazenar as tarefas em um vetor
@@ -24,9 +25,9 @@ export default function DashboardTecnico(){
     }
 
     return(
-        <div>
-            <h3>Minhas Ordens de Serviço</h3>
-            <table>
+        <div className={styles.container}>
+            <h3 className={styles.title}>Minhas Ordens de Serviço</h3>
+            <table className={styles.table}>
                 <thead>
                     <tr>
                         <th>Título</th>
@@ -36,6 +37,7 @@ export default function DashboardTecnico(){
                         <th>Data Solicitação</th>
                         <th>Data Finalização</th>
                         <th>Id Equipamento</th>
+                        <th>Ação</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -48,8 +50,8 @@ export default function DashboardTecnico(){
                             <td>{ordem.dataSolicitada.toDateString()}</td>
                             <td>{ordem.dataFinalizada?.toDateString()}</td>
                             <td>{ordem.equipamentoId}</td>
-                            <td><button>Finalizar Serviço</button></td>
-                            
+                            <td><button className={styles.button}>Finalizar Serviço</button></td>
+
 
                         </tr>
 

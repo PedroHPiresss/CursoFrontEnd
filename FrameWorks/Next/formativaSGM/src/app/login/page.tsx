@@ -1,6 +1,7 @@
-"use-client";
-import { useRouter } from "next/router";
+"use client";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
+import styles from "./page.module.css";
 
 //responsável pela interação com o usuário, como cliques e digitação
 
@@ -9,7 +10,7 @@ export default function LoginPage() {
     const [password, setPassword] = useState(""); // campo para digitação da senha
     const [error, setError] = useState(""); //mensagem de erro caso ocorra
 
-    const route = useRouter(); //rotas de navegação entre páginas
+    const router = useRouter(); //rotas de navegação entre páginas
 
     //METODO PARA  enviar login
     const handleSubmit = async (e: React.FormEvent) => {
@@ -27,13 +28,14 @@ export default function LoginPage() {
             //analisar a resposta do fetch
             const data = await response.json()
             if (data.success) {
-                //armazenar as nformações do usuário no localStorage
-                localStorage.setItem("token", data.token); //armazena o tekne
-                localStorage.setItem("userRole", data.usuario.tipo); //armazena o tipo de usuário
-                route.push("/dashboard") //redireciona para a pagina principal após o login bem-sucedido
+                // armazenar as informações do usuário no localStorage
+                localStorage.setItem("token", data.token);
+                localStorage.setItem("userRole", data.usuario?.tipo || "");
+                router.push("/dashboard"); // redireciona para a pagina principal após o login bem-sucedido
             } else {
-                const erroData = data.error();
-                setError(erroData.message || "Falha de login");
+                // data.error may be an object/string depending on the API
+                const erroData = data.error || data;
+                setError((erroData && erroData.message) || erroData || "Falha de login");
             }
         } catch (error) {
             console.error("Login Failed:", error);
@@ -43,11 +45,11 @@ export default function LoginPage() {
 
     //react DOM
     return (
-        <div className="center">
+        <div className={styles.center}>
             <h2>Login</h2>
-            {error && <p style={{ color: "red" }}>{error}</p>}
+            {error && <p>{error}</p>}
             <form onSubmit={handleSubmit}>
-                <div className="username">
+                <div className={styles.username}>
                     <label htmlFor="username">UserName</label>
                     <input
                         type="text"
@@ -55,7 +57,7 @@ export default function LoginPage() {
                         onChange={(e) => setUsername(e.target.value)}
                         required />
                 </div>
-                <div className="password">
+                <div className={styles.password}>
                     <label htmlFor="password">Senha</label>
                     <input
                         type="password"

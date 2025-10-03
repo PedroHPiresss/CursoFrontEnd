@@ -1,10 +1,11 @@
-"use-client";
+"use client";
 
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import DashboardTecnico from "../componentes/DashboardTecnico";
 import DashboardAdmin from "../componentes/DashboardAdmin";
 import DashboardGerente from "../componentes/DashboardGerente";
+import styles from "./page.module.css";
 
 export default function DashboardPage(){
     const router = useRouter();
@@ -17,7 +18,7 @@ export default function DashboardPage(){
         }else{
             setUserRole(role);
         }
-    });
+    }, [router]);
 
     const handleLogout = async () => {
         localStorage.removeItem("token");
@@ -37,11 +38,11 @@ export default function DashboardPage(){
 
     return (
         <div>
-            <header>
+            <header className={styles.header}>
                 <h1>Bem-Vindo</h1>
                 <button onClick={handleLogout}>Logout</button>
             </header>
-            <main>
+            <main className={styles.main}>
                 {renderDashboard()}
             </main>
         </div>

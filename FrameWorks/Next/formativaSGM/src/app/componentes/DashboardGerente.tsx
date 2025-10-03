@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { IEquipamento } from "@/models/equipamento";
 import { IOrdemServico } from "@/models/ordemServico";
+import styles from "./DashboardGerente.module.css";
 
 export default function DashboardGerente() {
   const [equipamentos, setEquipamentos] = useState<IEquipamento[]>([]);
@@ -38,12 +39,12 @@ export default function DashboardGerente() {
   };
 
   return (
-    <div>
-      <h3>Gerente Dashboard</h3>
+    <div className={styles.container}>
+      <h3 className={styles.title}>Gerente Dashboard</h3>
 
-      <section>
+      <section className={styles.section}>
         <h4>Equipamentos</h4>
-        <table>
+        <table className={styles.table}>
           <thead>
             <tr>
               <th>Modelo</th>
@@ -65,9 +66,9 @@ export default function DashboardGerente() {
         </table>
       </section>
 
-      <section>
+      <section className={styles.section}>
         <h4>Ordens de Serviço</h4>
-        <table>
+        <table className={styles.table}>
           <thead>
             <tr>
               <th>Título</th>

@@ -5,6 +5,8 @@ import { IUsuario } from "@/models/usuario";
 import { IEquipamento } from "@/models/equipamento";
 import { IOrdemServico } from "@/models/ordemServico";
 
+import styles from "./DashboardAdmin.module.css";
+
 export default function DashboardAdmin() {
   const [usuarios, setUsuarios] = useState<IUsuario[]>([]);
   const [equipamentos, setEquipamentos] = useState<IEquipamento[]>([]);
@@ -53,12 +55,12 @@ export default function DashboardAdmin() {
   };
 
   return (
-    <div>
-      <h3>Admin Dashboard</h3>
+    <div className={styles.container}>
+      <h3 className={styles.title}>Admin Dashboard</h3>
 
-      <section>
+      <section className={styles.section}>
         <h4>Usuários</h4>
-        <table>
+        <table className={styles.table}>
           <thead>
             <tr>
               <th>Username</th>
@@ -76,9 +78,9 @@ export default function DashboardAdmin() {
         </table>
       </section>
 
-      <section>
+      <section className={styles.section}>
         <h4>Equipamentos</h4>
-        <table>
+        <table className={styles.table}>
           <thead>
             <tr>
               <th>Modelo</th>
@@ -100,9 +102,9 @@ export default function DashboardAdmin() {
         </table>
       </section>
 
-      <section>
+      <section className={styles.section}>
         <h4>Ordens de Serviço</h4>
-        <table>
+        <table className={styles.table}>
           <thead>
             <tr>
               <th>Título</th>
